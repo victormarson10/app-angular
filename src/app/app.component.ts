@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CheckSampleComponent } from './check-sample/check-sample.component';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +17,10 @@ export class AppComponent {
   comeBackCheckSample(): void {
     this.isAliveCheckSample = true;
   }
+
+  teste = new CheckSampleComponent();
+
+
+
+
 }

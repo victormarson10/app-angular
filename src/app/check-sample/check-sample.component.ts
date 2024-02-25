@@ -19,16 +19,23 @@ implements OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChec
 
   quantidade:number = 0;
 
+  controleComponente:boolean = false;
+
   adicionar(){
     this.quantidade += 1
+    console.log(this.quantidade)
+    if (this.quantidade >= 0) {
+      this.controleComponente = true;
+    }
   }
 
   decrementar(){
-    if (this.quantidade <= 0){
-      //console.error("Numero negativo!") 
-      throw new Error('Numero negativo!')
-    } else {
     this.quantidade -= 1
+    console.log(this.quantidade)
+    if (this.quantidade <= 0) {
+      this.controleComponente = false;
+    } else {
+      this.controleComponente = true;
     }
   }
 
@@ -68,3 +75,7 @@ implements OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChec
   }
 
 }
+function ControleDeComponente() {
+  throw new Error('Function not implemented.');
+}
+
